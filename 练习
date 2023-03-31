@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="utf-8">
+            <title>练习2</title>
+      </head>
+      <body>
+            <h2>sample heading</h2>
+            <a href="#C1" style="color:purple">jump to bottom</a>
+            <hr>
+            <h1>paragragh</h1>
+            <p>paragragh1</p>
+            <p>paragragh2 is a example about problem</p>
+            <pre>
+                pre tag pair solves
+                the pome problem
+                of H T       M L
+            </pre>
+            <h3>text formating</h3>
+            <em>emphasize</em> looks like with <i>italic</i><br>
+            <b>Bold</b> looks like <strong>Strong</strong><br>
+            <mark>hightlight</mark> <small>small</small> <del>delete</del><ins>insert</ins> <sub>subscript</sub><sup>superscript</sup>
+            <h3>quote</h3>
+            <abbr title="Hyper Text Markup Language">HTML</abbr>
+            <address>
+                Hangzhou China<br>
+            </address>
+            <bdo dir="rtl">Hangzhou China</bdo>
+            <blockquote>
+                This is a block to quote
+            </blockquote>
+            <p><cite>Bible</cite> Jesus said "forgive!"</p>
+            <h2>List</h2>
+            <ul>
+                <li>list 1
+                <li>list 2 
+            </ul>
+            <br/>
+            <ol type="I">
+            <li>Zhejiang
+                <ul>
+                    <li>Hangzhou
+                    <li>Wenzhou
+                </ul>
+            <li>Peking
+            </ol>
+            <br/>
+            <dl>
+                <dt>Asia</dt>
+                <dd>China</dd>
+                <dt>Erope</dt>
+                <dd>France</dd>
+            </dl>
+            <br/>
+            <h2>Link</h2>
+            <a href="https://www.bilibili.com/">google local file</a>
+               <li>personl info</li>
+               <dl>
+                   <dt>name:张三</dt>
+                   <br>
+                   <dt>gender:男</dt>
+                   <br>
+                   <dt>age:20</dt>
+               </dl>
+            <h1 id="C1">Bottom</h1>   
+        </body>    
+</html>

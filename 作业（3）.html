@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>作业3</title>
+    <style type="text/css">
+        .header, .footer{
+            background-color: grey;
+            color: white;
+            padding: 15px;
+        }
+        .top{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        li.guide{
+            float: left
+        }
+        li:last-child{
+            border-right: none;
+        }
+        li a{
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active){
+            background-color: #111;
+        }
+        .active{
+            background-color: #ff0000;
+        }
+        .column{
+            padding: 15px;
+        }
+        .menu{
+            width: 25%;
+            float: left;
+        }
+        .content{
+            width: 75%;
+        }
+        .menu li{
+            padding: 8px;
+            margin-bottom: 8px;
+            background-color: rgb(0, 183, 255);
+            color: #ffffff;
+        }
+        .footer{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Chania</h1>
+    </div>
+    <ul class="top">
+        <li class="guide"><a class="active" href="#home">Home</a></li>
+        <li class="guide"><a href="#news">News</a></li>
+        <li class="guide"><a href="#contact">Contact</a></li>
+        <li class="guide"><a href="#about">About</a></li>
+    </ul>
+    <div>
+        <div class="column menu">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+        <div class="column content">
+            <h1>The City</h1>
+            <p>Chania is the capital of the Chaina region on the island of Crete.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Footer Text</p>
+    </div>
+</body>
+</html>

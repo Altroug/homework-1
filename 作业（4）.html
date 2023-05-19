@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>作业4</title>
+    <style type="text/css">
+        body{
+            background-image: "微信图片_20211209200613.jpg";
+            background-position: 25% 25%;
+        }
+        html,body,a,div,ul,li,input{
+            list-style: none;
+            border-spacing: 0;
+            border: 0;
+            border-collapse: collapse;
+            text-decoration: none;
+        }
+        .box{
+            margin-left: 170px;
+            margin-right: 170px;
+            width: 1365px;
+            height: 625px;
+        }
+        .header{
+            margin-right: 755px;
+            width: 465px;
+            height: 30px;
+            display: inline-block;
+        }
+        .counter{
+            display: inline-block;
+        }
+        .counter li{
+            float: left;
+        }
+        .counter li a,.focus{
+            display: block;
+            font-size: 15px;
+            color: #FFFFFFCC;
+            width: 40px;
+            height: 40px;
+            margin-right: 35px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .counter a:hover{
+            color: white;
+        }
+        .counter .focus:hover{
+            color: #fff;
+        }
+        .counter .extra{
+            width: 155px;
+            height: 90px;
+            background-color: #fff;
+            border-radius: 6px;
+            position: absolute;
+            top: 40px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            display: none;
+            box-shadow: 0 4px 12px 1px rgb(0 0 0 / 14%);
+            z-index: 1;
+        }
+        .counter .extra li{
+            display: block;
+            width: 135px;
+            height: 35px;
+            color: #666;
+            font-size: 15px;
+            padding-left: 20px;
+            text-align: left;
+        }
+        .counter .extra a{
+            display: block;
+            color: #666;
+        }
+        .counter .focus:hover .extra{
+            display: block;
+        }
+        .search{
+            width: 600px;
+            height: 50px;
+            margin-left: 230px;
+            position: relative;
+            top: 15%;
+            right: 30px;
+            box-sizing: border-box;
+        }
+        .sk{
+            width: 485px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 25px;
+            border: 0;
+            padding: 12px 10px 12px 16px;
+            font-size: 16px;
+        }
+        .submit{
+            cursor: pointer;
+            background-color: #4a68e0;
+            width: 64px;
+            height: 44px;
+            border: 0;
+            border-radius: 24px;
+            color: #fff;
+            font-size: 16px;
+            display: none;
+        }
+        .sc{
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            left: 465px;
+            top: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <div class="counter">
+                <ul>
+                    <li>
+                        <a href="#">picture</a>
+                    </li>
+                    <li>
+                        <a href="#">video</a>
+                    </li>
+                    <li class="focus">
+                        more
+                        <ul class="extra">
+                            <li><a href="#">maps</a></li>
+                            <li><a href="#">news</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="search">
+            <form target="_blank" method="get" action="https://www.baidu.com/" class="sbox">
+                <input type="text" placeholder="请输入搜索内容" name="word" class="sk">
+                <input type="submit" value="搜索" class="submit" id="submit">
+                <label for="submit"><img src="QQ图片20230519153207.jpg" class="sc"></label>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

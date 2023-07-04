@@ -1,0 +1,127 @@
+#header{
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+}
+.logo, .copyright{
+    text-decoration: none;;
+    background-color: rgb(103, 212, 176);
+    color: aliceblue;
+    padding: 15px 12px;
+    margin: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 8px double aliceblue;
+    border-radius: 30px;				
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+ul.icons{        
+    margin: 0;
+    padding: 0;
+    width: 70%;
+    height: 30px;
+    float: right;
+}
+ul.icons li{
+    float: right;
+}
+span.label{             
+    background-color: rgb(164, 232, 200);
+    margin: 5px;
+    padding: 10px 12px;
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 30px;
+    border: 2px solid rgb(235, 235, 197);
+}
+span.label:hover{
+    background-color: rgb(152, 214, 185);
+}
+ul.actions{
+    text-align: center;				
+}
+.button{
+    background-color:rgb(164, 232, 200);
+    margin: 10px;
+    padding: 10px 12px;
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 30px;
+}
+.button:hover{
+    background-color: rgb(152, 214, 185);
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+section:not(.alt){
+    border:10px dotted rgb(164, 182, 232);
+    padding: 10px;
+    margin: 20px;
+    clear: both;
+    border-radius: 30px;
+}
+#banner{
+    background-color: rgb(164, 182, 232);
+    color: azure;
+}
+article{
+float: left;
+width: 50%;
+padding: 50px;
+box-sizing: border-box;
+}
+input[type=text]{
+    width: 130px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 20px;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus{
+    width: 98%;
+}
+nav h2{
+    background-color: rgb(164, 232, 200);
+    color: aliceblue;
+    padding: 16px;
+    margin: 0 10px;
+    font-size: 20px;
+    width: 5%;
+    text-align: center;
+}
+nav ul{
+    margin: 0 10px;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #333;
+}
+nav li{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+nav li:last-child{
+    border-right: none;
+}
+nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+nav li a:hover{
+    background-color: #111;
+}

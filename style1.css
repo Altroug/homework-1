@@ -55,13 +55,18 @@ ul.actions{
 .button:hover{
     background-color: rgb(152, 214, 185);
 }
-img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+.content{
+    width: 60%;
 }
-section:not(.alt){
+span.image img{
+	position: absolute;
+	left: 63%;
+	bottom: 48%;
+	height: 30%;
+	width: 30%;
+	margin: 20px;
+}
+section:not(#banner){
     border:10px dotted rgb(164, 182, 232);
     padding: 10px;
     margin: 20px;
@@ -71,6 +76,10 @@ section:not(.alt){
 #banner{
     background-color: rgb(164, 182, 232);
     color: azure;
+	padding: 10px;
+    margin: 20px;
+	border-radius: 30px;
+	overflow: auto;
 }
 article{
 float: left;

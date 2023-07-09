@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+  <h1>Guess the missing letter!</h1>
+  <p id="word"></p>
+  <input type="text" id="guessInput">
+  <button id="submitBtn">Submit</button>
+  <button id="startBtn">New game</button>
+  <p id="timer"></p>
+  <p id="score"></p>
+  <p id="remainingGuesses"></p>
+  <p id="message"></p>
+  <script>
+const words = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "iceplant", "jackfruit", "kiwi", "lemon", "mango", "nectarine", "orange", "pineapple", "quince", "raspberry", "strawberry", "tangerine", "ugli", "victoria", "watermelon", "xigua", "yellow", "zucchini"];
+let currentWord;
+let missingLetter;
+let remainingGuesses;
+let score = 0;
+let message = "";
+let gameStarted = false;
+let timer;
+let countdown;
+const guessInput = document.querySelector("#guessInput");
+const submitBtn = document.querySelector("#submitBtn");
+const startBtn = document.querySelector("#startBtn");
+const timerDisplay = document.querySelector("#timer");
+const scoreDisplay = document.querySelector("#score");
+const remainingGuessesDisplay = document.querySelector("#remainingGuesses");
+
+// Set up event listeners
+startBtn.addEventListener("click", startGame)
+guessInput.addEventListener("keyup", enableSubmitBtn);
+submitBtn.addEventListener("click", function() {
+  if (gameStarted && remainingGuesses > 0) {
+    makeGuess();
+  }
+});
+
+// Enable submit button when input field is not empty
+function enableSubmitBtn() {
+  if (guessInput.value) {
+    submitBtn.disabled = false;
+  } else {
+    submitBtn.disabled = true;
+  }
+}
+
+// Start timer
+function startTimer() {
+  countdown = 15; // 设置倒计时为15秒
+  timerDisplay.textContent = `Time remaining: ${countdown} seconds`;
+  timer = setInterval(() => {
+    countdown--;
+    timerDisplay.textContent = `Time remaining: ${countdown} seconds`;
+    if (countdown <= 0) {
+      remainingGuesses--; // 扣除一次答题次数
+      clearInterval(timer); // 停止计时器
+      if (remainingGuesses === 0) { // 如果答题次数为0，结束游戏
+        gameStarted = false;
+        message = "Game over!";
+        updateDisplay();
+      } else {
+        resetGame(); // 跳转至下一题并重置计时器
+      }
+      updateDisplay();
+      
+    }
+  }, 1000);
+}
+
+// Start game
+function startGame() {
+  clearInterval(timer); // 清除之前的计时器
+  currentWord = words[Math.floor(Math.random() * words.length)];
+  missingLetter = currentWord[Math.floor(Math.random() * currentWord.length)];
+  remainingGuesses = 10; // 重置剩余猜测次数
+  score = 0;
+  gameStarted = true;
+  message = ""; // 清除上一轮游戏的消息
+  guessInput.value = ""; // 清空输入框
+  updateDisplay();
+  startTimer();
+}
+
+// Make guess
+function makeGuess() {
+  const guess = guessInput.value.toLowerCase();
+  guessInput.value = ""; // 清空输入框
+  if (guess && gameStarted && remainingGuesses > 0) {
+    if (guess === missingLetter) {
+      score += 100;
+      message = "Correct guess!";
+    } else {
+      remainingGuesses--;
+      message = "Incorrect guess.The missing letter was "+ missingLetter.toUpperCase();
+      if (remainingGuesses === 0) {
+        gameStarted = false; // 当剩余猜测次数为0时，结束游戏
+        message = "Game over! " ;
+        clearInterval(timer); // 停止计时器
+      }
+    }
+    resetGame(); // 无论猜测正确还是错误，都更新题目和重置计时器
+    updateDisplay(); // 更新页面上显示的信息
+  }
+}
+
+// Reset game
+function resetGame() {
+  clearInterval(timer); // 清除之前的计时器
+  if (gameStarted) {
+    currentWord = words[Math.floor(Math.random() * words.length)]; // 更新题目
+    missingLetter = currentWord[Math.floor(Math.random() * currentWord.length)];
+    startTimer();
+    updateDisplay();
+  }
+}
+
+// Update display
+function updateDisplay() {
+  let wordDisplay = "";
+  for (const letter of currentWord) {
+    if (letter === missingLetter) {
+      wordDisplay += "_";
+    } else {
+      wordDisplay += letter;
+    }
+  }
+  if (!gameStarted) {
+    document.querySelector("#word").textContent = "";
+    document.querySelector("#timer").textContent = "";
+    remainingGuessesDisplay.textContent = "";
+  } else {
+    document.querySelector("#word").textContent = wordDisplay;
+    document.querySelector("#timer").textContent = `Time remaining: ${countdown} seconds`;
+    remainingGuessesDisplay.textContent = `Remaining guesses: ${remainingGuesses}`;
+  }
+  scoreDisplay.textContent = `Score: ${score}`;
+  document.querySelector("#message").textContent = message;
+  enableSubmitBtn();
+}
+  </script>
+</body>
+</html>
